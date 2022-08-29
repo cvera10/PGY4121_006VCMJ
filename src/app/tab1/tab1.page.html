@@ -1,17 +1,33 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Catalogo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
   </ion-header>
+      <ion-item *ngFor="let vinilo of vinilos" lines="none" style="margin-bottom: 2rem;">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{vinilo[0]}}</ion-card-title>
+          </ion-card-header>
+          <img src={{vinilo[3]}} />
+          <ion-card-content>
+           <label style="margin-right: 10rem;">
+             Descripcion del vinilo "{{vinilo[1]}}"
+             </label>
+            <ion-label style="font-weight: bold;color: #000;">Precio: ${{vinilo[2]}}</ion-label>
+            <ion-button fill="outline" slot="end" onclick="alert('Aun en mantenimiento pagina de vinilo')">
+            <ion-icon name="card-outline" style="">
+              </ion-icon>
+              Comprar
+            </ion-button> 
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
+
